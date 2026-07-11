@@ -562,3 +562,32 @@ details.rc-qa p { margin: 14px 0 0; font-size: .92rem; }
   font-size: .8rem;
   color: #7a5a12;
 }
+
+/* ===================== real image fills (replace placeholder gradients) ===================== */
+.rc-card .photo, .rc-msg-photo, .rc-iphoto, .rc-hero,
+.hub-col .photo, .hub-photohero { overflow: hidden; }
+
+.rc-card .photo img,
+.rc-msg-photo img,
+.hub-col .photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+/* interview photo: image fills, overlay stays on top */
+.rc-iphoto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* hero carousel: real photos as slides */
+.rc-hero .slide {
+  position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease;
+}
+.rc-hero .slide.active { opacity: 1; }
+.rc-hero .slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rc-hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.28); z-index: 1; }
+.rc-hero h2, .rc-hero-dots { position: relative; z-index: 3; }
+
+/* corporate homepage hero photo */
+.hub-photohero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.hub-photohero::after { content: ""; position: absolute; inset: 0; background: rgba(255,255,255,.25); z-index: 1; }
+.hub-photohero .caption { z-index: 2; }
+
+/* real logo in recruit header */
+.rc-logo img.logo-img { height: 40px; width: auto; display: block; }
