@@ -23,8 +23,8 @@
   .hero h1{font-size:clamp(1.5rem,4vw,2.3rem); font-weight:800; margin:12px 0 14px;}
   .hero p{max-width:640px; margin:0 auto; opacity:.95; font-size:.95rem;}
   .wrap{max-width:1040px; margin:0 auto; padding:56px 24px;}
-  .cards{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
-  @media(max-width:760px){.cards{grid-template-columns:1fr;}}
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  @media(max-width:900px){.cards{grid-template-columns:1fr;}}
   .card{
     background:#fff; border-radius:18px; overflow:hidden; text-decoration:none; color:inherit;
     box-shadow:0 10px 30px rgba(0,0,0,.08); transition:transform .2s, box-shadow .2s;
@@ -32,14 +32,18 @@
   }
   .card:hover{transform:translateY(-5px); box-shadow:0 18px 40px rgba(0,0,0,.12);}
   .card .thumb{height:170px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:1.3rem; letter-spacing:.05em;}
-  .card.current .thumb{background:linear-gradient(135deg,#00b894,#009d7b 55%,#7fd8bf);}
+  .card.current .thumb{background:linear-gradient(135deg,#8fd8c4,#5cb89e 55%,#bfe6d8); color:#0c3b30;}
+  .card.renewal .thumb{background:linear-gradient(135deg,#00b894,#009d7b 55%,#00594A);}
   .card.newsite .thumb{background:linear-gradient(135deg,#14171A,#00594A 70%,#C9A227);}
+  .card .thumb small{display:block; font-size:.7rem; font-weight:700; letter-spacing:.14em; margin-top:6px; opacity:.9;}
+  .card.renewal{outline:3px solid #009d7b; outline-offset:-3px;}
   .card .body{padding:26px 28px 30px;}
   .card .tag{display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.08em; padding:4px 12px; border-radius:999px; margin-bottom:12px;}
-  .card.current .tag{background:#e3f4ee; color:#00594A;}
+  .card.current .tag{background:#eef1ef; color:#5a6b64;}
+  .card.renewal .tag{background:#e3f4ee; color:#00594A;}
   .card.newsite .tag{background:#efe7cf; color:#8a6d15;}
-  .card h2{margin:0 0 10px; font-size:1.25rem;}
-  .card p{margin:0 0 18px; font-size:.9rem; color:#555;}
+  .card h2{margin:0 0 10px; font-size:1.2rem;}
+  .card p{margin:0 0 18px; font-size:.88rem; color:#555;}
   .card .go{font-weight:700; color:var(--teal); font-size:.9rem;}
   .card.newsite .go{color:var(--teal-deep);}
   .note{max-width:1040px; margin:0 auto 56px; padding:0 24px; font-size:.82rem; color:#777;}
@@ -62,17 +66,26 @@
       <div class="body">
         <span class="tag">CURRENT</span>
         <h2>現行サイトの再現</h2>
-        <p>実サイト（shochu-comp.co.jp）の構成・配色・トーンを忠実に再現。丸ゴシック＋やさしい緑基調で、安心・受容を前面に出したデザイン。</p>
+        <p>実サイト（shochu-comp.co.jp）の構成・配色・実画像を忠実に再現。丸ゴシック＋やさしい緑基調で、安心・受容を前面に出した現状のトーン。</p>
         <span class="go">現行案トップを見る →</span>
       </div>
     </a>
-    <a class="card newsite" href="new/index.html">
-      <div class="thumb">リニューアル案</div>
+    <a class="card renewal" href="renewal/corporate.html">
+      <div class="thumb">リニューアル案<br><small>テキスト刷新版</small></div>
       <div class="body">
-        <span class="tag">RENEWAL</span>
-        <h2>リニューアル案</h2>
-        <p>ダーク×エディトリアル路線。データ・裁量・成長を前面に出し、行動力や思考力を重視する学生層に響く硬派な編集トーンで再設計。</p>
-        <span class="go">リニューアル案トップを見る →</span>
+        <span class="tag">RENEWAL ①</span>
+        <h2>デザインそのまま／テキスト刷新</h2>
+        <p>現行のデザイン・画像はそのままに、本文コピーだけを「仕事への意欲・チャレンジ精神の高い学生」に響くトーンへ全面刷新した提案。すぐ差し替え可能な現実的な案です。</p>
+        <span class="go">テキスト刷新版を見る →</span>
+      </div>
+    </a>
+    <a class="card newsite" href="new/index.html">
+      <div class="thumb">参考案</div>
+      <div class="body">
+        <span class="tag">RENEWAL ②（参考）</span>
+        <h2>フルリデザイン案</h2>
+        <p>ダーク×エディトリアル路線でゼロから再設計した参考案。データ・裁量・成長を前面に出した硬派な編集トーン。</p>
+        <span class="go">フルリデザイン案を見る →</span>
       </div>
     </a>
   </div>
@@ -80,7 +93,7 @@
 
 <div class="note">
   <div class="box">
-    ※本サイトは社内検討用の再現／提案モックアップです。写真はすべてプレースホルダー（CSSグラデーション）で、実写真は使用していません。詳細は各サイトおよびリポジトリの README を参照してください。
+    ※社内検討用のモックアップです。「現行案」「テキスト刷新版」は商工中金情報システムの実サイト画像を使用しています。「参考案（フルリデザイン）」のみプレースホルダー画像です。詳細は各サイト・リポジトリの README を参照してください。
   </div>
 </div>
 
